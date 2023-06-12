@@ -1,0 +1,108 @@
+﻿@model CinemaHubFinalProject.Models.Movies
+
+@{
+    ViewBag.Title = "Movie";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-4 gallery align-items-center d-flex flex-row flex-wrap justify-content-between">
+            <a href="Home/Movie/@Model.MovieName">
+                <img src="@Model.ImgPath" class="poster">
+            </a>
+        </div>
+        <div class="poster  col-md-6">
+            <br/>
+            <h1 class="white">@Model.MovieName</h1>
+            <br/>
+            <div style="font-size:15px">
+                <p class="white">Duration: @Model.Duration (mins)</p>
+                <p class="white">Price: $@Model.Price</p>
+                <p class="white">Description: @Model.Description</p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr/>
+@Html.Action("GetCommentByMovieName","Comments",new {id = Model.MovieName})
+
+    <hr class="white">
+    <div class="container">
+        <div class="container d-flex">
+            <h2 class="font-bold white">Select Time</h2>
+        </div>
+        <div>
+            <ul class="row">
+                <li class="show-time d-inline-block">
+                    <div class="small-padding align-items-center margin-bottom">
+                        <button onclick='showTimeFunction()' class="btn" target="_blank">11:00 AM</button>
+                    </div>
+                </li>
+                <li class="show-time d-inline-block">
+                    <div class="small-padding align-items-center margin-bottom">
+                        <button onclick='showTimeFunction()' href="#" class="btn" target="_blank">01:30 PM</button>
+                    </div>
+                </li>
+                <li class="show-time d-inline-block">
+                    <div class="small-padding align-items-center margin-bottom">
+                        <button onclick='showTimeFunction()' href="#" class="btn" target="_blank">04:50 PM</button>
+                    </div>
+                </li>
+                <li class="show-time d-inline-block">
+                    <div class="small-padding align-items-center margin-bottom">
+                        <button onclick='showTimeFunction()' href="#" class="btn" target="_blank">09:30 PM</button>
+                    </div>
+                </li>
+                <li class="show-time d-inline-block">
+                    <div class="small-padding align-items-center margin-bottom">
+                        <button onclick='showTimeFunction()' href="#" class="btn" target="_blank">11:30 PM</button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <hr class="white">
+    <div class="container">
+        <div class="container align-items-center d-flex">
+            <h2 class="font-bold white">Select Seat</h2>
+        </div>
+        <div class="container small-height d-flex align-items-center justify-content-center">
+            <h2 class="grey zero-margin padding-top-bottom">S C R E E N</h1>
+        </div>
+    </div>
+    <div class="container big-height d-flex align-items-center justify-content-center">
+        <table class="table" id="seat-table">
+        </table>
+    </div>
+    <hr class="white">
+    <div class="container">
+        <h2 class="white">Confirmation</h2>
+        <div>
+            <p class="white d-inline-block">
+                Selected Seat:
+            </p>
+            <p class="white d-inline-block" id="chosen-seat">
+                None
+            </p>
+        </div>
+        <div>
+            <p class="white d-inline-block">
+                Total Amount:
+            </p>
+            <p class="white d-inline-block" id="total-amount">
+                0
+            </p>
+        </div>
+        <div class="d-flex flex-col flex-wrap">
+            <div class="btn" style="width: 80px;">confirm</div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="../../Scripts/script.js"></script>
+
+

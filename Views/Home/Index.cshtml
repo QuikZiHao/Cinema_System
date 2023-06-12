@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CinemaHubFinalProject.Models.Movies>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="container-fluid">
+    <h1 style="color: #ffa500; text-align: center">Now Showing</h1>
+    <div class="row justify-content-center" style="font-size:20px">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <div class="col-md-offset-1 col-md-3">
+                <p class="white d-inline-block">Genre:</p>
+                @Html.DropDownList("movieGenre", "All")
+            </div>
+            <div class="col-md-offset-1 col-md-4">
+                <p class="white d-inline-block">Search:</p> @Html.TextBox("SearchString")
+            </div>
+            <div class="col-md-3">
+                <input type="submit" value="Filter" style="width:120px; height:30px;" />
+            </div>
+        }
+    </div>
+    <hr />
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-offset-1 col-md-3">
+                <div class="gallery align-items-center d-flex flex-row flex-wrap justify-content-between">
+                    <div class="row">
+                        <div class="col-md-12" style="color: white; font-size: 35px; font: bold ">
+                            <a target="_blank" href="../Home/Movie/@item.MovieName">
+                                <img src=@item.ImgPath alt="movie2" class="poster">
+                            </a>
+                        </div>
+                        <div class="col-md-10" style="color: white; font-size: 35px; font: bold ">
+                            @Html.DisplayFor(modelItem => item.MovieName)
+                        </div>
+                        <div class="col-md-2">
+                            <a href="../Home/Movie/@item.MovieName" class="btn" target="_blank" style="margin-top:25px; bold; width: 70px; height: 30px;font-size:13px">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

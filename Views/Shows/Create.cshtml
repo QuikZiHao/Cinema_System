@@ -1,0 +1,50 @@
+﻿@model CinemaHubFinalProject.Models.Shows
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="color:white">Create</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal white">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShowID, htmlAttributes: new { @class = "control-label col-md-2 white" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ShowID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ShowID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MovieName, "MovieName", htmlAttributes: new { @class = "control-label col-md-2 white" })
+            <div class="col-md-10">
+                @Html.DropDownList("MovieName", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MovieName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShowTime, htmlAttributes: new { @class = "control-label col-md-2 white" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ShowTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ShowTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

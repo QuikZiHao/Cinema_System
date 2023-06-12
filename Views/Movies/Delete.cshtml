@@ -1,0 +1,66 @@
+﻿@model CinemaHubFinalProject.Models.Movies
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 style="color:white">Delete</h2>
+
+<h3 style="color:white">Do you sure you want to delete this?</h3>
+<div style="color:white">
+    <h4>Movies</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgPath)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" />
+            <br />
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CinemaHubFinalProject.Models.Comments>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-7">
+            <h1 class="font-bold white">Comments</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-12" style="border-bottom:2px solid orange">
+                <div class="col-md-12 font-bold white" style="font-size:25  px">
+                    @Html.DisplayFor(modelItem => item.UserName) :
+                </div>
+                <div class="col-md-12 white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 font-bold white " style="font-size: 15px; white-space: initial;">
+                                @Html.DisplayFor(modelItem => item.Comment)
+                            </div>
+                            <div class="col-md-offset-8 col-md-4 text-right" style="font-size:10px">
+                                @Html.DisplayFor(modelItem => item.PublishTime)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" style="color:black;font-size:2px">
+                <p>test</p>
+            </div>
+        }
+    </div>
+</div>
+<!--发表评论-->
+<form id="commentform" action="/Comments/Create" method="post">
+    <input type="hidden" name="MovieName" value="@ViewBag.ID" />
+    <div class="form-group">
+        <label for="Comment" class="white">Leave Your Comment Here:</label>
+        <input type="text" name="com" id="com" style="width:500px" placeholder="Comment..." value />
+        <button class="btn btn-default" id="btn">Confirm</button>
+    </div>
+</form>

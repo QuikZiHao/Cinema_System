@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+}
+
+@model CinemaHubFinalProject.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - Cinema Hub</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link href="../../Content/style.css" rel="stylesheet">
+    </head>
+
+    <div class="center">
+        <h1 class="white">Register</h1>
+            <div>
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="txt_field grey">
+                        <input id="Email" name="Email" class='grey' type="text" required value>
+                        <span></span>
+                        <label>Email</label>
+                    </div>
+                    <div class="txt_field grey">
+                        <input id="Password" name="Password" class='grey' type="password" required value>
+                        <span></span>
+                        <label>Password</label>
+                    </div>
+                    <div class="txt_field grey">
+                        <input id="ConfirmPassword" name="ConfirmPassword" class='grey' type="password" required value>
+                        <span></span>
+                        <label>Re-Enter Password</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="tnc" name="tnc" class="grey d-inline-block" required>
+                        <label class='grey tnc' for="tnc">
+                            I certify that I am 18 years old or older, and agree to abide by Cinemahub's
+                            <a class="link-hov white">Terms and Conditions</a> and <a class="link-hov white">Privacy Policy</a>.
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <input type="submit" class="btn" value="Submit">
+                    <div class="signup_link">
+                        Already a member? <a class='link-hov white' href="Login">Sign In</a>
+                    </div>
+                }
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</html>

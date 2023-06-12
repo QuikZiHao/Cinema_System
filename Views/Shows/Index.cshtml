@@ -1,0 +1,197 @@
+﻿@model IEnumerable<CinemaHubFinalProject.Models.Shows>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color:white">Shows</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table white">
+    <tr>
+        <th>
+            Movie Name
+        </th>
+        <th class="white">
+            @Html.DisplayNameFor(model => model.ShowTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat0)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat16)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat17)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat18)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat19)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat20)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat21)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat22)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat23)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat24)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat25)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="white">
+                @Html.DisplayFor(modelItem => item.Movies.MovieName, new { @class = "white" })
+            </td>
+            <td class="white">
+                @Html.DisplayFor(modelItem => item.ShowTime, new { @class = "white" })
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat0)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat11)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat13)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat14)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat16)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat17)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat18)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat19)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat20)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat21)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat23)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat24)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat25)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ShowID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ShowID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ShowID })
+            </td>
+        </tr>
+    }
+
+</table>
